@@ -28,12 +28,27 @@ namespace GameProject
 
         public void Delete(Gamer gamer)
         {
-            Console.WriteLine("Kayıt Silindi.");
+            if (_userValidationService.Validate(gamer)==true)
+            {
+                Console.WriteLine("Kayıt Silindi.");
+            }
+            else
+            {
+                Console.WriteLine("Doğrulama Başarısız. Silme işlemi Başarısız.");
+            }
+            
         }
 
         public void Update(Gamer gamer)
         {
-            Console.WriteLine("Kayıt Güncellendi.");
+            if (_userValidationService.Validate(gamer)==true)
+            {
+                Console.WriteLine("Kayıt Güncellendi.");
+            }
+            else
+            {
+                Console.WriteLine("Doğrulama Başarısız. Güncelleme Başarısız.");
+            }
         }
     }
 }
